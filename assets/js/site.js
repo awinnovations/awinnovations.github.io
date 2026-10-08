@@ -203,7 +203,15 @@
             setStatus(form, "is-err", MSG.server);
           }
         })
-        .catch(function () { setStatus(form, "is-err", MSG.server); })
+        .catch(function () {
+          // Cross-origin reply blocked or network error: fall back to a plain
+          // form post to the same Brevo endpoint (Brevo then shows its own page).
+          try {
+            form.setAttribute("action", action);
+            form.setAttribute("method", "post");
+            HTMLFormElement.prototype.submit.call(form);
+          } catch (err) { setStatus(form, "is-err", MSG.server); }
+        })
         .then(function () { btn.disabled = false; });
     });
   }
