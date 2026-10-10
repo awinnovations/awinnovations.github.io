@@ -9,7 +9,8 @@ Plain HTML/CSS/JS. No build step and no server code. Serve the folder as-is.
 - `assets/fonts/`: Fraunces and Atkinson Hyperlegible Next, SIL Open Font License 1.1 (license files included)
 - `_tools/build-pages.py`: optional helper that regenerates the guide/privacy/accessibility/404 pages from `../drafts/voice-cloning-guide.md`
 - `_headers`: security headers for Netlify / Cloudflare Pages (ignored by GitHub Pages)
-- `CNAME`: custom domain for GitHub Pages branch publishing (ignored elsewhere)
+- `CNAME`: intentionally absent during the GitHub Pages preview (https://awinnovations.github.io/). Re-add it (single line `awinnovations.org`) at cutover, after the domain is verified and DNS points to GitHub. See launch-plan.md.
+- `robots.txt`: preview blocks all crawling (`Disallow: /`). At launch replace with `Allow: /` plus `Sitemap: https://awinnovations.org/sitemap.xml`.
 
 Preview state: every page carries `<meta name="robots" content="noindex, nofollow">` and a "Preview for review" bar. Remove both at launch once every `[CONFIRM]` mark is resolved (`grep -rn "CONFIRM\|noindex\|preview-bar" *.html _tools`).
 
