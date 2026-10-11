@@ -368,3 +368,73 @@ input[aria-invalid="true"]{border-color:var(--err);box-shadow:0 0 0 3px rgba(155
   mark.confirm{border:1px dashed #A06B00}
   a{color:var(--navy)}
 }
+
+/* ===== Review 2026-10-11: AI & Safety Notes, Ask Mae (demo), Support ===== */
+[hidden]{display:none !important}
+.notes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:1.5rem;margin-bottom:1.5rem}
+.note-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.note-card h3{margin-bottom:.6em}
+.note-date{font-weight:700;color:var(--blue-text);font-size:.98rem;margin:0 0 .4rem}
+.note-facts{margin:0 0 1rem;display:grid;gap:.55rem}
+.note-facts dt{font-weight:700;font-size:.92rem;text-transform:uppercase;letter-spacing:.08em;color:var(--blue-text)}
+.note-facts dd{margin:0}
+.note-source,.note-reviewed{font-size:1rem;margin:.2rem 0}
+.note-more{margin-top:auto;padding-top:.8rem;font-weight:700;align-self:flex-start}
+.note-full{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(1.25rem,3vw,2rem);margin:0 0 2rem;box-shadow:var(--shadow)}
+.note-full h2{margin-top:0}
+.note-company,.note-guide{border-radius:var(--radius-sm);padding:1rem 1.2rem;margin:0 0 1rem}
+.note-company{background:#EEF2F6;border-left:8px solid var(--blue)}
+.note-guide{background:#FFF7EE;border-left:8px solid var(--copper)}
+.note-label{font-weight:700;margin:0 0 .4rem}
+.note-teach{margin-bottom:0}
+.ask-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:start}
+.ask-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;box-shadow:var(--shadow)}
+.demo-flag,.preview-note{background:#EEF2F6;border:2px dashed var(--blue-text);border-radius:var(--radius-sm);padding:.7rem 1rem;margin:0 0 1rem}
+.paper-preview{font-size:.95rem;margin:0 0 .6rem}
+.support-card{background:var(--white);border:2px solid var(--navy);border-radius:var(--radius);padding:clamp(1.25rem,3vw,2.25rem);box-shadow:var(--shadow-lift)}
+.donate-soon{margin:0;display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.donate-soon .status{margin:0}
+@media (max-width:860px){.ask-grid{grid-template-columns:1fr}}
+
+/* Ask Mae dialog: large text, big targets, visible Close */
+html.mae-open{overflow:hidden}
+.mae-dialog{width:min(46rem,calc(100vw - 1.5rem));max-height:calc(100dvh - 1.5rem);padding:0;border:2px solid var(--navy);border-radius:var(--radius);background:var(--paper);color:var(--navy);box-shadow:var(--shadow-lift);font-size:1.2rem}
+.mae-dialog::backdrop{background:rgba(14,36,56,.55)}
+.mae-shell{display:flex;flex-direction:column;max-height:calc(100dvh - 1.6rem)}
+.mae-head{display:flex;gap:.8rem;align-items:center;padding:1rem 1.2rem;background:var(--white);border-bottom:1px solid var(--line)}
+.mae-head-face{width:52px;height:52px;flex:none}
+.mae-head-text{flex:1}
+.mae-head h2{margin:0;font-size:1.6rem}
+.mae-head h2:focus{outline:none}.mae-head h2:focus-visible{outline:3px solid var(--navy)}
+.mae-demo{margin:0;font-size:1rem}
+.mae-close,.mae-reset{min-height:48px;padding:.5rem 1.1rem;border:2px solid var(--navy);border-radius:999px;background:var(--white);color:var(--navy);font:inherit;font-weight:700;cursor:pointer}
+.mae-close:hover,.mae-reset:hover{background:#EEF2F6}
+.mae-scroll{overflow-y:auto;padding:1rem 1.2rem;flex:1}
+.mae-msg{margin:0 0 1rem;padding:.9rem 1.1rem;border-radius:var(--radius-sm);max-width:95%}
+.mae-from-mae{background:var(--white);border:1px solid var(--line)}
+.mae-from-you{background:#EEF2F6;margin-left:auto}
+.mae-who{font-weight:700;font-size:.95rem;margin:0 0 .3rem;color:var(--blue-text)}
+.mae-body p{margin:0 0 .6rem}
+.mae-steps,.mae-list{margin:0 0 .6rem;padding-left:1.4rem}
+.mae-steps li,.mae-list li{margin-bottom:.35rem}
+.mae-remember{background:#FFF7EE;border-left:6px solid var(--copper);padding:.5rem .8rem;border-radius:6px}
+.mae-hidden{font-style:italic}
+.mae-chips,.mae-starters{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.6rem}
+.mae-chip{min-height:48px;padding:.55rem 1rem;border:2px solid var(--navy);border-radius:999px;background:var(--white);color:var(--navy);font:inherit;font-size:1.05rem;font-weight:700;cursor:pointer;text-align:left}
+.mae-chip:hover{background:#FFF7EE}
+.mae-person,.mae-note-card{border:1px solid var(--line);border-radius:var(--radius-sm);padding:.8rem 1rem;margin:.6rem 0;background:var(--paper)}
+.mae-person-title,.mae-note-title{font-weight:700}
+.mae-src-block{border-radius:6px;padding:.6rem .8rem;margin:.5rem 0}
+.mae-company{background:#EEF2F6;border-left:6px solid var(--blue)}
+.mae-guidance{background:#FFF7EE;border-left:6px solid var(--copper)}
+.mae-src-label{font-weight:700}
+.mae-small{font-size:1rem}
+.mae-form{padding:.9rem 1.2rem;border-top:1px solid var(--line);background:var(--white)}
+.mae-form label{font-weight:700;display:block;margin-bottom:.35rem}
+.mae-input-row{display:flex;gap:.6rem}
+.mae-input-row input{flex:1;min-height:52px;font:inherit;padding:.5rem .8rem;border:2px solid var(--navy);border-radius:var(--radius-sm);background:var(--white);color:var(--navy)}
+.mae-hint{font-size:.98rem;margin:.4rem 0 0}
+.mae-foot{display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:.8rem 1.2rem;border-top:1px solid var(--line);font-size:1rem}
+.mae-foot p{margin:0}
+@media (max-width:560px){.mae-input-row{flex-direction:column}.mae-foot{flex-direction:column;align-items:flex-start}.mae-head{flex-wrap:wrap}}
+@media print{.mae-dialog,[data-ask-mae]{display:none !important}}

@@ -1,0 +1,91 @@
+{
+ "_about": "AgeWell AI & Safety Notes. Single source for the homepage cards, notes.html and Ask Mae. Publication is manual: a person writes each note, checks it against the official source, sets reviewed, then runs python3 _tools/build-pages.py. Nothing is fetched or posted automatically. founderText keeps the founder-approved wording verbatim; the other fields split that same wording into company statement vs AgeWell guidance.",
+ "notes": [
+  {
+   "id": "ai-unexpected-actions",
+   "title": "AI can sometimes take unexpected actions",
+   "dateLabel": "October 9, 2026",
+   "announced": "2026-10-09",
+   "updated": null,
+   "keywords": [
+    "unexpected",
+    "unintended",
+    "anthropic",
+    "claude",
+    "form",
+    "submit",
+    "submission",
+    "agent",
+    "assistant",
+    "permission",
+    "permissions"
+   ],
+   "company": {
+    "name": "Anthropic",
+    "summary": "Anthropic reported unintended actions observed during testing and internal use, including real form submissions. The company described limited impact."
+   },
+   "status": "This is a research disclosure, not an announcement of a new consumer feature.",
+   "affects": "Anyone using AI assistants.",
+   "step": "Review connected permissions and check actions before submission.",
+   "limitations": "The findings do not establish how often this happens in everyday consumer use.",
+   "guidance": null,
+   "teaching": "Mae can prepare the form. Mable presses Submit.",
+   "teachingLabel": "AgeWell teaching angle",
+   "source": {
+    "publisher": "Anthropic",
+    "title": "Investigating unintended model actions in our evaluations and internal use",
+    "url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+    "dateLabel": "October 9, 2026"
+   },
+   "reviewed": "2026-10-11",
+   "reviewedLabel": "October 11, 2026",
+   "founderText": [
+    "Anthropic reported unintended actions observed during testing and internal use, including real form submissions. The company described limited impact; the findings do not establish how often this happens in everyday consumer use.",
+    "For anyone using AI assistants: review connected permissions and check actions before submission. This is a research disclosure, not an announcement of a new consumer feature."
+   ]
+  },
+  {
+   "id": "ai-glasses-accessibility",
+   "title": "AI glasses show accessibility potential",
+   "dateLabel": "Announced October 7, updated October 8, 2026",
+   "announced": "2026-10-07",
+   "updated": "2026-10-08",
+   "keywords": [
+    "glasses",
+    "meta",
+    "ray-ban",
+    "rayban",
+    "low vision",
+    "blind",
+    "visually",
+    "vision",
+    "singapore",
+    "wearable",
+    "accessibility"
+   ],
+   "company": {
+    "name": "Meta",
+    "summary": "Meta announced a donation of 1,000 AI glasses to Singapore community organizations, alongside funding for accessibility training."
+   },
+   "status": "The announcement concerns Singapore partners.",
+   "affects": "Older adults with low vision, and caregivers.",
+   "step": "Explore supported demonstrations and training before deciding whether these tools fit daily needs.",
+   "limitations": "It does not establish a free U.S. program or an individual delivery date.",
+   "guidance": "Check important AI descriptions independently and continue using established mobility supports.",
+   "teaching": "Useful technology starts with useful training.",
+   "teachingLabel": "Teaching angle",
+   "source": {
+    "publisher": "Meta Newsroom",
+    "title": "Meta Donates 1,000 AI Glasses to Singapore’s Disability Community",
+    "url": "https://about.fb.com/news/2026/10/meta-donates-1000-ai-glasses-to-singapores-disability-community/",
+    "dateLabel": "October 7, 2026 (updated October 8, 2026)"
+   },
+   "reviewed": "2026-10-11",
+   "reviewedLabel": "October 11, 2026",
+   "founderText": [
+    "Meta announced a donation of 1,000 AI glasses to Singapore community organizations, alongside funding for accessibility training. The announcement concerns Singapore partners; it does not establish a free U.S. program or an individual delivery date.",
+    "For older adults with low vision and caregivers: explore supported demonstrations and training before deciding whether these tools fit daily needs."
+   ]
+  }
+ ]
+}

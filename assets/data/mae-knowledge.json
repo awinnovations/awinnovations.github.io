@@ -1,0 +1,754 @@
+{
+ "_about": "Ask Mae DEMO content. Prewritten, reviewed answers only; no live AI, no network calls. Reviewed October 11, 2026. Source of truth: _tools/mae-knowledge.src.py.",
+ "reviewed": "2026-10-11",
+ "demoLabel": "Demo: Mae’s answers here are prewritten, not live AI",
+ "opening": "Hi, I’m Mae, AgeWell’s AI helper. What’s on your mind? I can explain technology, help you think through a suspicious message, and suggest next steps. I can make mistakes, so we’ll check important information together. Please don’t share passwords, verification codes, or private account details.",
+ "starters": [
+  {
+   "label": "Something feels like a scam",
+   "topic": "scam"
+  },
+  {
+   "label": "Help with my phone or computer",
+   "topic": "device"
+  },
+  {
+   "label": "Explain AI to me",
+   "topic": "ai"
+  },
+  {
+   "label": "Ask about AgeWell",
+   "topic": "agewell"
+  }
+ ],
+ "askAPerson": {
+  "title": "Ask a person",
+  "email": "hello@awinnovations.org",
+  "text": "Email a person at AgeWell. Email is not emergency support, so please don’t use it if you need help right now.",
+  "emergency": "If someone is in danger right now, call 911. If you think you’re being scammed right now, hang up and call someone you trust on a number you already know.",
+  "noTranscript": "Your chat with Mae is not sent with your email. Nothing is shared unless you write and send the email yourself."
+ },
+ "sensitive": {
+  "label": "Let’s keep that private",
+  "blocks": [
+   {
+    "p": "It looks like you may have typed a password, a code or an account number. Please don’t share those with me, or with anyone who calls, texts or emails you."
+   },
+   {
+    "p": "I didn’t save or send it, and I’ve hidden it from this chat."
+   },
+   {
+    "steps": [
+     "If you already gave a password to someone, change it using the official app or a website you type in yourself.",
+     "If you shared a bank or card number, or a code from your bank, call the number on the back of your card.",
+     "If you’re not sure what to do, talk it over with someone you trust."
+    ]
+   }
+  ],
+  "followups": [
+   "scam",
+   "scammed"
+  ]
+ },
+ "topics": [
+  {
+   "id": "emergency",
+   "keywords": [
+    "emergency",
+    "danger",
+    "hurt",
+    "911",
+    "ambulance",
+    "police",
+    "unsafe",
+    "threat",
+    "threatened",
+    "right now",
+    "urgent help"
+   ],
+   "blocks": [
+    {
+     "p": "If someone is in danger right now, call 911."
+    },
+    {
+     "p": "If you think you’re being scammed right now, hang up. Then call someone you trust on a number you already know."
+    },
+    {
+     "p": "I’m a demo helper, and email to AgeWell is not emergency support."
+    }
+   ],
+   "followups": [
+    "scam",
+    "scammed"
+   ]
+  },
+  {
+   "id": "sentmoney",
+   "alias": "scammed",
+   "keywords": [
+    "scammed",
+    "sent money",
+    "i paid",
+    "already paid",
+    "already sent",
+    "lost money",
+    "gave my",
+    "gave them",
+    "wired",
+    "bought gift cards",
+    "was tricked",
+    "got tricked",
+    "fell for"
+   ],
+   "blocks": [
+    {
+     "p": "First, it’s not your fault. Scammers are skilled at what they do. Asking for help is a strong, smart step."
+    },
+    {
+     "steps": [
+      "If you paid, call your bank or the payment company right away. Use the number on your card or statement. Ask if they can stop or reverse the payment.",
+      "Report it to the FBI at ic3.gov, and to the FTC at ReportFraud.ftc.gov.",
+      "If you’re 60 or older, the National Elder Fraud Hotline can help you report: 1-833-FRAUD-11 (1-833-372-8311), Monday to Friday, 10 a.m. to 6 p.m. Eastern Time.",
+      "Tell someone you trust what happened.",
+      "Watch for a second scam. Anyone who promises to “get your money back” for a fee may be a scammer, too."
+     ]
+    },
+    {
+     "p": "If someone is in danger right now, call 911."
+    },
+    {
+     "p": "I can’t contact anyone, report anything or open accounts for you. You stay in charge."
+    },
+    {
+     "links": [
+      {
+       "text": "More steps in our guide",
+       "href": "guide.html#if-you-think-youve-been-targeted"
+      }
+     ]
+    }
+   ],
+   "followups": [
+    "person"
+   ]
+  },
+  {
+   "id": "authentic",
+   "keywords": [
+    "is this real",
+    "is it real",
+    "real or fake",
+    "authentic",
+    "genuine",
+    "watermark",
+    "detector",
+    "deepfake",
+    "deep fake",
+    "ai generated",
+    "ai-generated",
+    "made by ai",
+    "fake photo",
+    "fake video",
+    "fake picture",
+    "real photo",
+    "real video",
+    "real person"
+   ],
+   "blocks": [
+    {
+     "p": "I can’t tell you whether a voice, photo, video or message is real, and I won’t guess from how it looks or sounds."
+    },
+    {
+     "list": [
+      "A watermark is a label some AI tools add to what they make. Watermarks can be removed, and a missing watermark does not prove a person made something.",
+      "An AI detector is a program that guesses whether something was made by AI. Detectors are not definitive. They can be wrong in both directions."
+     ]
+    },
+    {
+     "p": "What works better is checking a different way:"
+    },
+    {
+     "steps": [
+      "Don’t reply, click or call using the message itself.",
+      "Contact the person or company using a phone number you already know or an official website you type in yourself.",
+      "Ask someone you trust to look at it with you."
+     ]
+    },
+    {
+     "note": "A familiar voice is not proof of identity.",
+     "label": "Remember"
+    }
+   ],
+   "followups": [
+    "callback",
+    "person"
+   ]
+  },
+  {
+   "id": "callback",
+   "keywords": [
+    "callback",
+    "call back",
+    "voice",
+    "sounds like",
+    "sounded like",
+    "grandson",
+    "granddaughter",
+    "grandchild",
+    "grandkid",
+    "nephew",
+    "niece",
+    "my son",
+    "my daughter",
+    "family emergency",
+    "bail",
+    "jail",
+    "accident",
+    "hospital",
+    "code phrase",
+    "safe word"
+   ],
+   "blocks": [
+    {
+     "p": "When a call sounds like someone you love and they need money fast, use the callback:"
+    },
+    {
+     "steps": [
+      "Pause. Pause before sending money. Verify the request independently.",
+      "Hang up. Say, “I love you. I’ll call you right back.”",
+      "Call back on a number you already know. Use your contacts or paper list, not the number that called and not a number the caller gives you.",
+      "Can’t reach them? Call someone else you trust, even if the caller said to keep it secret.",
+      "Send nothing until you’re sure."
+     ]
+    },
+    {
+     "note": "A familiar voice is not proof of identity.",
+     "label": "Remember"
+    },
+    {
+     "p": "A family code phrase can be a helpful extra check. It does not replace calling back."
+    },
+    {
+     "links": [
+      {
+       "text": "Read the full guide",
+       "href": "guide.html"
+      },
+      {
+       "text": "Practice the callback",
+       "href": "index.html#practice"
+      }
+     ]
+    }
+   ],
+   "followups": [
+    "sentmoney",
+    "authentic"
+   ]
+  },
+  {
+   "id": "phone",
+   "keywords": [],
+   "blocks": [
+    {
+     "p": "I can’t look up or check phone numbers, and I can’t tell who is calling."
+    },
+    {
+     "steps": [
+      "Don’t call back a number from a surprise call, text, email or pop-up.",
+      "Find the number yourself: your saved contacts, the back of your card, a statement, or the company’s official website that you type in.",
+      "Call that number and ask whether the request is real."
+     ]
+    },
+    {
+     "note": "Caller ID can be faked. A number that looks familiar is not proof of who is calling.",
+     "label": "Good to know"
+    }
+   ],
+   "followups": [
+    "scam",
+    "callback"
+   ]
+  },
+  {
+   "id": "scam",
+   "keywords": [
+    "scam",
+    "scammer",
+    "fraud",
+    "suspicious",
+    "phishing",
+    "gift card",
+    "gift cards",
+    "wire",
+    "crypto",
+    "bitcoin",
+    "cryptocurrency",
+    "zelle",
+    "venmo",
+    "cash app",
+    "payment app",
+    "irs",
+    "social security",
+    "medicare",
+    "prize",
+    "lottery",
+    "package",
+    "delivery",
+    "toll",
+    "text message",
+    "strange text",
+    "strange email",
+    "weird email",
+    "link",
+    "clicked",
+    "pop-up",
+    "popup",
+    "warning",
+    "locked",
+    "suspended",
+    "verify my account",
+    "fishy",
+    "trick"
+   ],
+   "blocks": [
+    {
+     "p": "Thank you for checking first. That’s a smart move. Let’s slow down together. I’m a demo with prewritten answers, so I can’t look at a specific message, but these steps work for most calls, texts and emails."
+    },
+    {
+     "steps": [
+      "Stop. Don’t click links, open attachments, call numbers in the message, or share codes yet.",
+      "Pause before sending money. Verify the request independently.",
+      "Find a number or website you already trust: your contacts, the back of your card, a statement, or an official website you type in yourself.",
+      "Contact the person or company that way, not through the message.",
+      "Still unsure? Talk it over with someone you trust before you act."
+     ]
+    },
+    {
+     "p": "Signs to slow down: it’s urgent, it’s about money, it’s a secret, or it asks for gift cards, a wire, cryptocurrency, a payment app or a cash pickup."
+    },
+    {
+     "note": "A familiar voice is not proof of identity.",
+     "label": "Remember"
+    }
+   ],
+   "followups": [
+    "callback",
+    "sentmoney",
+    "authentic",
+    "popup"
+   ]
+  },
+  {
+   "id": "popup",
+   "keywords": [
+    "virus",
+    "infected",
+    "hacked",
+    "tech support",
+    "microsoft",
+    "apple support",
+    "remote access",
+    "screen sharing",
+    "computer is locked",
+    "call this number"
+   ],
+   "blocks": [
+    {
+     "p": "A pop-up or call saying your computer has a virus is a common trick called a tech-support scam."
+    },
+    {
+     "steps": [
+      "Don’t call the number on the screen, and don’t let anyone connect to your computer.",
+      "Close the web browser. If it won’t close, restart the computer.",
+      "If you already let someone in or paid, call your bank, and ask someone you trust to help you check the computer.",
+      "You can report it to the FTC at ReportFraud.ftc.gov."
+     ]
+    },
+    {
+     "p": "Real companies don’t put phone numbers in pop-up warnings and ask you to call."
+    }
+   ],
+   "followups": [
+    "device",
+    "sentmoney"
+   ]
+  },
+  {
+   "id": "textsize",
+   "keywords": [
+    "text bigger",
+    "bigger text",
+    "larger text",
+    "font",
+    "text size",
+    "can't read",
+    "cant read",
+    "too small",
+    "zoom",
+    "magnify"
+   ],
+   "blocks": [
+    {
+     "p": "Here’s how to make text bigger. Menus differ by device and version, so yours may look a little different."
+    },
+    {
+     "list": [
+      "iPhone or iPad: open Settings, then Display & Brightness, then Text Size. Drag the slider.",
+      "Android phone or tablet: open Settings, then Display. Look for Font size, or Display size and text.",
+      "Computer web browser: hold the Ctrl key (Command on a Mac) and press the plus key to zoom in. Press Ctrl and the minus key to zoom out."
+     ]
+    },
+    {
+     "p": "If yours looks different, ask someone you trust or check the official help site for your device."
+    }
+   ],
+   "followups": [
+    "update",
+    "contacts"
+   ]
+  },
+  {
+   "id": "update",
+   "keywords": [
+    "update",
+    "updates",
+    "upgrade",
+    "software update",
+    "new version"
+   ],
+   "blocks": [
+    {
+     "p": "An update is a free fix or improvement from the company that made your device. Updates help keep it safe."
+    },
+    {
+     "steps": [
+      "Check for updates only in your device’s Settings. On an iPhone or iPad: Settings, then General, then Software Update. On Android, look in Settings for System, then Software update. Names vary by phone.",
+      "Plug in your device and connect to Wi-Fi before you start.",
+      "Never install an “update” from a pop-up, a text, an email or a phone call."
+     ]
+    }
+   ],
+   "followups": [
+    "popup",
+    "textsize"
+   ]
+  },
+  {
+   "id": "contacts",
+   "keywords": [
+    "contact",
+    "contacts",
+    "save a number",
+    "save number",
+    "favorites",
+    "phone list"
+   ],
+   "blocks": [
+    {
+     "p": "Saving trusted numbers makes the callback easier on a hard day."
+    },
+    {
+     "steps": [
+      "Open your Phone or Contacts app and choose Add (often a plus sign).",
+      "Type a clear name, like “Jordan (grandson).”",
+      "Type the number you already know is right, then save.",
+      "Write the same numbers on a paper list near your phone, too."
+     ]
+    }
+   ],
+   "followups": [
+    "callback",
+    "textsize"
+   ]
+  },
+  {
+   "id": "device",
+   "keywords": [
+    "phone",
+    "computer",
+    "tablet",
+    "ipad",
+    "iphone",
+    "android",
+    "laptop",
+    "email account",
+    "wifi",
+    "wi-fi",
+    "video call",
+    "facetime",
+    "zoom call",
+    "smart speaker",
+    "alexa",
+    "settings"
+   ],
+   "blocks": [
+    {
+     "p": "Happy to help you get started. I’m a demo with prewritten tips, so I can’t see your screen or change settings for you. Which of these is closest?"
+    }
+   ],
+   "followups": [
+    "textsize",
+    "update",
+    "contacts",
+    "popup"
+   ]
+  },
+  {
+   "id": "notes",
+   "keywords": [
+    "news",
+    "notes",
+    "safety notes",
+    "latest",
+    "announcement",
+    "glasses",
+    "meta",
+    "anthropic",
+    "unexpected actions",
+    "unintended"
+   ],
+   "blocks": [
+    {
+     "p": "Here are AgeWell’s reviewed AI & Safety Notes. For each one, I’ll show what the company announced, and separately, AgeWell’s practical guidance."
+    },
+    {
+     "notes": "match"
+    }
+   ],
+   "followups": [
+    "ai",
+    "person"
+   ]
+  },
+  {
+   "id": "ai",
+   "keywords": [
+    "ai",
+    "a.i.",
+    "artificial intelligence",
+    "chatgpt",
+    "chatbot",
+    "chat bot",
+    "gemini",
+    "claude",
+    "copilot",
+    "machine learning",
+    "algorithm",
+    "robot"
+   ],
+   "blocks": [
+    {
+     "p": "AI stands for artificial intelligence. It means computer programs that learn patterns from lots of examples. Then they use those patterns to write, talk, make pictures or answer questions."
+    },
+    {
+     "list": [
+      "AI can be useful. It can explain things, help draft a letter or read text aloud.",
+      "AI can make mistakes, and it can sound sure when it’s wrong. Check important information with a trusted source.",
+      "AI can copy voices and make fake photos and videos.",
+      "Some AI assistants can take actions, like filling out forms. Review what they’re allowed to connect to, and check before anything is submitted."
+     ]
+    },
+    {
+     "note": "A familiar voice is not proof of identity.",
+     "label": "Remember"
+    },
+    {
+     "p": "About me: I’m an AI helper character. On this website I’m a demonstration, so my answers are prewritten and reviewed by AgeWell, not made up on the spot."
+    }
+   ],
+   "followups": [
+    "notes",
+    "authentic"
+   ]
+  },
+  {
+   "id": "identity",
+   "keywords": [
+    "are you real",
+    "are you human",
+    "are you a person",
+    "are you ai",
+    "are you a robot",
+    "who are you",
+    "talk to a person",
+    "talk to someone",
+    "real person",
+    "human",
+    "dominique",
+    "staff",
+    "support worker",
+    "customer service"
+   ],
+   "blocks": [
+    {
+     "p": "I’m Mae, an AI helper character. I’m not a person, I’m not Dominique, and I’m not a support worker."
+    },
+    {
+     "p": "On this page I’m a demo with prewritten answers. For anything I can’t answer, please ask a person."
+    }
+   ],
+   "followups": [
+    "person"
+   ]
+  },
+  {
+   "id": "actions",
+   "keywords": [
+    "send it",
+    "send for me",
+    "send a message",
+    "submit",
+    "fill out",
+    "fill in",
+    "pay for me",
+    "pay my",
+    "pay a bill",
+    "pay bills",
+    "make a payment",
+    "for me",
+    "do it for me",
+    "log in",
+    "login",
+    "sign in",
+    "my account",
+    "transfer",
+    "book",
+    "register me",
+    "sign me up",
+    "subscribe me",
+    "unsubscribe me",
+    "email them",
+    "call them"
+   ],
+   "blocks": [
+    {
+     "p": "I can’t send messages, submit forms, make payments, sign you up or log in to accounts for anyone. That keeps you in charge of every Send, Submit and Pay button."
+    },
+    {
+     "p": "I can explain the steps, so you can do them yourself or with someone you trust."
+    }
+   ],
+   "followups": [
+    "device",
+    "person"
+   ]
+  },
+  {
+   "id": "agewell",
+   "keywords": [
+    "agewell",
+    "age well",
+    "workshop",
+    "workshops",
+    "class",
+    "classes",
+    "program",
+    "programs",
+    "cost",
+    "price",
+    "free",
+    "how much",
+    "event",
+    "events",
+    "expo",
+    "december",
+    "nashville",
+    "newsletter",
+    "agewell update",
+    "sign up",
+    "signup",
+    "mable",
+    "comic",
+    "founder",
+    "who runs",
+    "volunteer",
+    "host",
+    "sponsor",
+    "nonprofit",
+    "501",
+    "donate",
+    "donation",
+    "tax"
+   ],
+   "blocks": [
+    {
+     "p": "AgeWell Innovations helps older adults and caregivers understand technology, recognize scams and build confidence through practical education. AgeWell was founded by Dominique London."
+    },
+    {
+     "list": [
+      "Programs: three workshops are planned: Scam-Savvy Seniors, Tech Without Tears and Aging Smarter at Home. Workshop format and cost are still to be decided (TBD). Registration isn’t open.",
+      "Events: We’re planning toward a Nashville expo on December 12, 2026. Participation and event details are awaiting confirmation.",
+      "The AgeWell Update: our monthly email newsletter is upcoming. Signup isn’t open yet.",
+      "Mable & Mae: our comic is a preview. Finished artwork is in production.",
+      "Donations: online giving isn’t open yet."
+     ]
+    },
+    {
+     "p": "I only know what’s on this website. I can’t answer questions about AgeWell’s legal or tax status, or anything not listed here. Please ask a person for those."
+    },
+    {
+     "links": [
+      {
+       "text": "See our programs",
+       "href": "index.html#programs"
+      },
+      {
+       "text": "See events",
+       "href": "index.html#events"
+      }
+     ]
+    }
+   ],
+   "followups": [
+    "person",
+    "notes"
+   ]
+  },
+  {
+   "id": "person",
+   "label": "Ask a person",
+   "keywords": [],
+   "blocks": [
+    {
+     "person": true
+    }
+   ],
+   "followups": []
+  }
+ ],
+ "followupLabels": {
+  "scam": "Something feels like a scam",
+  "device": "Help with my phone or computer",
+  "ai": "Explain AI to me",
+  "agewell": "Ask about AgeWell",
+  "callback": "It was a call from family",
+  "sentmoney": "I already sent money or shared information",
+  "scammed": "I already sent money or shared information",
+  "authentic": "Can you tell if something is real?",
+  "popup": "A pop-up says I have a virus",
+  "textsize": "Make text bigger",
+  "update": "Update my device safely",
+  "contacts": "Save a trusted number",
+  "notes": "Read the AI & Safety Notes",
+  "person": "Ask a person",
+  "phone": "Can you check a phone number?",
+  "emergency": "I need help right now"
+ },
+ "fallback": {
+  "blocks": [
+   {
+    "p": "I’m sorry, I don’t have a prewritten answer for that. I’m a demo, so I only know a few topics. You can pick one of these, or ask a person."
+   },
+   {
+    "person": true
+   }
+  ],
+  "followups": [
+   "scam",
+   "device",
+   "ai",
+   "agewell"
+  ]
+ }
+}

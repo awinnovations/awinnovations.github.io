@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="assets/css/site.css">
 <script src="assets/js/config.js" defer></script>
 <script src="assets/js/site.js" defer></script>
+<script src="assets/js/ask-mae.js" defer></script>
 </head>
 <body>
 <svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
@@ -54,6 +55,7 @@
       <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
       <span class="menu-label">Menu</span>
     </button>
+<!-- GEN:NAV:START -->
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
         <li><a href="#programs">Programs</a></li>
@@ -62,9 +64,11 @@
         <li><a href="#newsletter">Newsletter</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#about">About</a></li>
-        <li class="nav-cta"><a class="btn btn-primary btn-small" href="#newsletter">Get the AgeWell Update</a></li>
+        <li data-donate-show hidden><a href="#support">Donate</a></li>
+        <li class="nav-cta"><a class="btn btn-primary btn-small" href="#signup">Get the AgeWell Update</a></li>
       </ul>
     </nav>
+<!-- GEN:NAV:END -->
   </div>
 </header>
 
@@ -80,7 +84,7 @@
       <p>We use plain words, go at your pace and treat every learner as a capable adult.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="#programs">Explore our programs</a>
-        <a class="btn btn-secondary" href="#newsletter">Get the AgeWell Update</a>
+        <a class="btn btn-secondary" href="#signup">Get the AgeWell Update</a>
       </div>
       <p class="hero-note">Serving older adults and caregivers across the United States.</p>
     </div>
@@ -90,7 +94,7 @@
           <source srcset="assets/img/mable-and-mae.webp" type="image/webp">
           <img src="assets/img/mable-and-mae.jpg" width="722" height="561" alt="Mable, an older Black woman with silver curls, round glasses, a navy cardigan and a copper scarf, smiles over her coffee at Mae, a small ivory robot with a navy face and copper ear discs.">
         </picture>
-        <figcaption>Mable &amp; Mae, the fictional stars of our comic. Artwork created with AI assistance.</figcaption>
+        <figcaption>Mable &amp; Mae, the fictional stars of our comic. Artwork created with AI assistance and reviewed by AgeWell Innovations.</figcaption>
       </figure>
       <div class="mae-greeting" id="mae-greeting">
         <svg class="mae-live" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
@@ -103,7 +107,7 @@
           <circle cx="19" cy="69" r="10" fill="#D97732"/><circle cx="19" cy="69" r="4.5" fill="#15324F"/>
           <circle cx="101" cy="69" r="10" fill="#D97732"/><circle cx="101" cy="69" r="4.5" fill="#15324F"/>
         </svg>
-        <p class="mae-bubble">Hi, I’m Mae! Mable makes the calls. I just cheer.</p>
+        <p class="mae-bubble">Hi, I’m Mae! I help Mable explore. Mable decides.</p>
         <button type="button" class="motion-toggle" hidden>Pause animation</button>
       </div>
     </div>
@@ -116,12 +120,12 @@
     <div class="section-head reveal">
       <p class="kicker">Planned workshops</p>
       <h2 id="programs-title">Our programs</h2>
-      <p>We’re building three workshop programs. They are <strong>planned, not running yet</strong>. Join an interest list, and we’ll tell you when one opens.</p>
+      <p>We’re building three workshop programs. They are <strong>planned, not running yet</strong>, and registration isn’t open. Join the interest list, and we’ll tell you when one opens.</p>
     </div>
     <div class="card-grid">
       <article class="card program reveal">
         <p class="status"><span class="status-dot" aria-hidden="true"></span>Planned · 60-minute pilot in development</p>
-        <h3>Scam-Proof Seniors</h3>
+        <h3>Scam-Savvy Seniors</h3>
         <p>Learn to spot scams and check before you act, including new tricks that use AI.</p>
         <h4>You’ll practice</h4>
         <ul class="ticks">
@@ -130,7 +134,7 @@
           <li>Knowing what AI voice and video fakes can and can’t do</li>
           <li>What to do and who to call if something goes wrong</li>
         </ul>
-        <a class="btn btn-secondary card-btn" href="#interest" data-interest="scam-proof-seniors">Join the interest list<span class="sr-only"> for Scam-Proof Seniors</span></a>
+        <a class="btn btn-secondary card-btn" href="#interest" data-interest="scam-savvy-seniors">Join the interest list<span class="sr-only"> for Scam-Savvy Seniors</span></a>
       </article>
       <article class="card program reveal">
         <p class="status"><span class="status-dot" aria-hidden="true"></span>Planned</p>
@@ -159,7 +163,7 @@
         <a class="btn btn-secondary card-btn" href="#interest" data-interest="aging-smarter-at-home">Join the interest list<span class="sr-only"> for Aging Smarter at Home</span></a>
       </article>
     </div>
-    <p class="note reveal">Workshop dates, locations, formats and costs are not set yet. <mark class="confirm">[CONFIRM: in person, online, or both? Any cost?]</mark></p>
+    <p class="note reveal"><strong>Workshop format and cost: to be decided (TBD).</strong> Dates and locations are not set yet. The interest list is not a registration.</p>
   </div>
 </section>
 
@@ -174,7 +178,7 @@
       <p>You don’t need to spot a fake voice. You just need to check a different way.</p>
       <h3>The callback</h3>
       <ol class="steps">
-        <li><strong>Pause.</strong> A real emergency can wait two minutes.</li>
+        <li><strong>Pause.</strong> Pause before sending money. Verify the request independently.</li>
         <li><strong>Hang up.</strong> Say, “I love you. I’ll call you right back.”</li>
         <li><strong>Call back on a number you already know.</strong> Use your contacts or paper list, not the number that called and not a number the caller gives you.</li>
         <li><strong>Can’t reach them? Call someone else you trust.</strong> Even if the caller said to keep it secret.</li>
@@ -235,6 +239,82 @@
   </div>
 </section>
 
+<!-- AI & SAFETY NOTES (cards generated from assets/data/notes.json by _tools/build-pages.py) -->
+<section class="section section-tint" id="safety-notes" aria-labelledby="notes-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">Reviewed by a person</p>
+      <h2 id="notes-title">AI &amp; Safety Notes</h2>
+      <p>Short, dated notes about AI and safety news. Each one keeps what a company announced separate from our practical guidance, and links to the official source. We write and check every note by hand.</p>
+    </div>
+    <div class="notes-grid">
+<!-- GEN:NOTES:START -->
+      <article class="note-card reveal" aria-labelledby="card-ai-unexpected-actions">
+        <p class="note-date">October 9, 2026</p>
+        <h3 id="card-ai-unexpected-actions">AI can sometimes take unexpected actions</h3>
+        <dl class="note-facts">
+          <div><dt>Status</dt><dd>This is a research disclosure, not an announcement of a new consumer feature.</dd></div>
+          <div><dt>Who it affects</dt><dd>Anyone using AI assistants.</dd></div>
+          <div><dt>Practical step</dt><dd>Review connected permissions and check actions before submission.</dd></div>
+          <div><dt>Limitations</dt><dd>The findings do not establish how often this happens in everyday consumer use.</dd></div>
+        </dl>
+        <p class="note-source"><strong>Official source:</strong> <a href="https://www.anthropic.com/research/investigating-unintended-model-actions" rel="noopener">Anthropic, October 9, 2026</a></p>
+        <p class="note-reviewed">Reviewed: October 11, 2026</p>
+        <a class="note-more" href="notes.html#ai-unexpected-actions">Read the full note<span class="sr-only">: AI can sometimes take unexpected actions</span></a>
+      </article>
+      <article class="note-card reveal" aria-labelledby="card-ai-glasses-accessibility">
+        <p class="note-date">Announced October 7, updated October 8, 2026</p>
+        <h3 id="card-ai-glasses-accessibility">AI glasses show accessibility potential</h3>
+        <dl class="note-facts">
+          <div><dt>Status</dt><dd>The announcement concerns Singapore partners.</dd></div>
+          <div><dt>Who it affects</dt><dd>Older adults with low vision, and caregivers.</dd></div>
+          <div><dt>Practical step</dt><dd>Explore supported demonstrations and training before deciding whether these tools fit daily needs.</dd></div>
+          <div><dt>Limitations</dt><dd>It does not establish a free U.S. program or an individual delivery date.</dd></div>
+        </dl>
+        <p class="note-source"><strong>Official source:</strong> <a href="https://about.fb.com/news/2026/10/meta-donates-1000-ai-glasses-to-singapores-disability-community/" rel="noopener">Meta Newsroom, October 7, 2026 (updated October 8, 2026)</a></p>
+        <p class="note-reviewed">Reviewed: October 11, 2026</p>
+        <a class="note-more" href="notes.html#ai-glasses-accessibility">Read the full note<span class="sr-only">: AI glasses show accessibility potential</span></a>
+      </article>
+<!-- GEN:NOTES:END -->
+    </div>
+    <div class="btn-row reveal">
+      <a class="btn btn-secondary" href="notes.html">See all AI &amp; Safety Notes</a>
+      <a class="btn btn-ghost" href="#signup">Get notes like these in The AgeWell Update (upcoming)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ASK MAE (demo) -->
+<section class="section" id="ask-mae-section" aria-labelledby="ask-mae-sec-title">
+  <div class="wrap ask-grid">
+    <div class="reveal">
+      <p class="kicker">Try the demo</p>
+      <h2 id="ask-mae-sec-title">Ask Mae</h2>
+      <p class="lede-sm">Questions about technology, AI, a suspicious message or AgeWell? Mae walks you through short, clear next steps.</p>
+      <p class="demo-flag"><strong>Demo:</strong> Mae’s answers here are prewritten, not live AI. Nothing you type is saved or sent.</p>
+      <div class="btn-row">
+        <button class="btn btn-primary" type="button" data-ask-mae hidden>Open Ask Mae (demo)</button>
+      </div>
+      <p class="mae-nojs small">Ask Mae needs JavaScript. You can still ask a person at <a href="mailto:hello@awinnovations.org">hello@awinnovations.org</a>. Email is not emergency support.</p>
+    </div>
+    <div class="ask-card reveal">
+      <h3>What Mae can do</h3>
+      <ul class="ticks">
+        <li>Explain technology and AI in plain words</li>
+        <li>Help you think through a suspicious call, text or email</li>
+        <li>Suggest next steps that you take yourself</li>
+      </ul>
+      <h3>What Mae won’t do</h3>
+      <ul class="ticks">
+        <li>Pretend to be a person. Mae is an AI helper character.</li>
+        <li>Send messages, submit forms, make payments or open accounts</li>
+        <li>Tell you a voice, photo or message is real</li>
+      </ul>
+      <p class="small">For anything else, <a href="mailto:hello@awinnovations.org">ask a person</a>. Email is not emergency support. If someone is in danger, call 911.</p>
+    </div>
+  </div>
+</section>
+
 <!-- MABLE & MAE -->
 <section class="section section-tint" id="mable-and-mae" aria-labelledby="comic-title">
   <div class="wrap">
@@ -242,12 +322,12 @@
       <p class="kicker">Our comic</p>
       <h2 id="comic-title">Mable &amp; Mae Take on the Modern World</h2>
       <p>Meet Mable. She’s sharp, funny and always makes her own call. Her small bot friend, Mae, tags along as Mable takes on the modern world one tricky moment at a time. Mable doesn’t trust Mae at first. Over time, curiosity, a little friction and some honest talk turn into trust that Mae has to earn. Mae respects Mable’s choices. Mable stays in charge.</p>
-      <p class="mae-note"><strong>Mae is a made-up character for our stories.</strong> She is not a device or service you can get.</p>
+      <p class="mae-note"><strong>Mae is a made-up character for our stories.</strong> She is not a device you can buy. On this website, “Ask Mae” is a demo helper with prewritten answers.</p>
     </div>
 
     <div class="episode reveal">
       <div class="episode-head">
-        <h3>Episode 1: “The Callback”</h3>
+        <h3>Episode 1: “The Callback” <span class="tag tag-small">Preview</span></h3>
         <p class="small">Script preview. Finished panel artwork is in production; every word below is the real script, set as text so everyone can read it.</p>
       </div>
       <ol class="comic" aria-label="The Callback, four panels">
@@ -286,8 +366,8 @@
           <p><strong>Panel 4.</strong> Mable leans back with her coffee and says: “I’m fine. Your fake twin needs a job.” Jordan laughs and says: “Ha! Love you, Grandma.” Footer: “A familiar voice is not proof of identity. Hang up. Call back on a number you know.”</p>
         </div>
       </details>
-      <p class="disclosure"><strong>About the artwork:</strong> Mable &amp; Mae artwork is created with AI assistance and reviewed by AgeWell Innovations. Story by AgeWell. Fictional characters. <mark class="confirm">[CONFIRM: name the AI tool?]</mark></p>
-      <p><a href="#newsletter">New episodes appear in The AgeWell Update</a></p>
+      <p class="disclosure"><strong>About the artwork:</strong> Artwork created with AI assistance and reviewed by AgeWell Innovations. Story by AgeWell. Fictional characters.</p>
+      <p><a href="#signup">Upcoming episodes will appear in The AgeWell Update</a></p>
     </div>
   </div>
 </section>
@@ -307,10 +387,12 @@
         <li>One useful tech skill</li>
         <li>A reader poll and Ask AgeWell</li>
         <li>A new Mable &amp; Mae comic</li>
+        <li>Reviewed <a href="notes.html">AI &amp; Safety Notes</a></li>
       </ul>
-      <p><strong>First issue:</strong> coming December 2026.</p>
+      <p><strong>Upcoming:</strong> the first issue is planned for December 2026. It hasn’t been sent yet.</p>
 
-      <div class="paper" aria-label="Preview of the front page of Issue 1">
+      <div class="paper" role="group" aria-label="Preview of the front page of Issue 1">
+        <p class="paper-preview"><span class="tag tag-small">Preview</span> Not yet published. Contents may change.</p>
         <p class="paper-masthead">The AgeWell Update</p>
         <p class="paper-tagline">People · Technology · Brighter days ahead</p>
         <p class="paper-issue">Issue 1 · December 2026 · Technology with care.</p>
@@ -336,7 +418,8 @@
 
     <div class="form-card reveal" id="signup">
       <h3>Get the AgeWell Update</h3>
-      <p>Free, monthly, by email.</p>
+      <p>Practical technology lessons, safety tips, and Mable &amp; Mae—delivered monthly. Free to join.</p>
+      <p class="preview-note" data-preview-note="newsletter"><strong>Preview:</strong> signup isn’t open yet. This form doesn’t send or save anything.</p>
       <form class="signup-form" data-form="newsletter" novalidate>
         <div class="field">
           <label for="nl-email">Email address <span class="req">(required)</span></label>
@@ -353,12 +436,12 @@
         </div>
         <p class="field-error" id="nl-consent-error" hidden></p>
         <div class="check">
-          <input id="nl-alerts" name="SAFETY_ALERTS" type="checkbox" value="1">
-          <label for="nl-alerts">Also send me occasional safety alerts. <span class="opt">These are separate from the monthly Update.</span></label>
+          <input id="nl-alerts" name="SAFETY_ALERTS" type="checkbox" value="1" data-alerts>
+          <label for="nl-alerts">Occasional safety alerts <span class="opt">(optional, separate from the monthly Update)</span></label>
         </div>
         <div class="hp" aria-hidden="true"><label for="nl-hp">Leave this empty</label><input id="nl-hp" name="email_address_check" type="text" tabindex="-1" autocomplete="off"></div>
-        <button class="btn btn-primary" type="submit">Sign up</button>
-        <p class="helper">We’ll send a confirmation email first. You’re not signed up until you click the link in it. We ask only for your email and, if you choose, your first name. <a href="privacy.html">Read our privacy notice</a>.</p>
+        <button class="btn btn-primary" type="submit">Join the AgeWell Update</button>
+        <p class="helper">When signup opens, we’ll email you a link to confirm. You won’t be subscribed until you click it. We ask only for your email and, if you choose, your first name. <a href="privacy.html">Read our privacy notice</a>.</p>
         <div class="form-status" role="status" aria-live="polite" data-status></div>
       </form>
       <p class="small">The Update comes by email only. We don’t mail printed copies right now.</p>
@@ -385,9 +468,9 @@
       <dl class="facts reveal">
         <div><dt>Who we serve</dt><dd>Older adults and caregivers across the United States.</dd></div>
         <div><dt>Location</dt><dd>United States. Our first events are being planned in Nashville, Tennessee.</dd></div>
-        <div><dt>Founder</dt><dd>AgeWell Innovations was founded by Dominique London. <mark class="confirm">[CONFIRM FOUNDER BIO]</mark></dd></div>
-        <div><dt>Where we are now</dt><dd>We’re just getting started. Our programs are in planning. Our first guide, newsletter and comic are ready to share. We’ll post real updates here as they happen.</dd></div>
-        <div><dt>Our status</dt><dd>AgeWell Innovations is not yet recognized by the IRS as a 501(c)(3) organization.</dd></div>
+        <div id="founder"><dt>Founder</dt><dd>Dominique London is the founder of AgeWell Innovations, an initiative helping older adults and caregivers understand technology, recognize scams, and build confidence. AgeWell combines practical education with approachable storytelling through Mable &amp; Mae.</dd></div>
+        <div><dt>Where we are now</dt><dd>We’re just getting started. Our programs are in planning. Our first guide is ready to read. Our newsletter and comic are previews, with first issues upcoming. We’ll post real updates here as they happen.</dd></div>
+        <div><dt>Our status</dt><dd>AgeWell Innovations is not yet recognized by the IRS as a 501(c)(3) organization. <mark class="confirm">[CONFIRM LEGAL-STATUS WORDING]</mark></dd></div>
       </dl>
     </div>
 
@@ -412,7 +495,8 @@
 
     <div class="form-card interest-card reveal" id="interest">
       <h3>Interest list</h3>
-      <p>Tell us what you’d like to hear about. We’ll only contact you about the items you check. This is an interest list, not a registration.</p>
+      <p>Tell us what you’d like to hear about. We’ll only contact you about the items you check. This is an interest list, not a registration, and it doesn’t sign you up for The AgeWell Update.</p>
+      <p class="preview-note" data-preview-note="interest"><strong>Preview:</strong> the interest list isn’t connected yet. Nothing is sent or saved.</p>
       <form class="interest-form" data-form="interest" novalidate>
         <div class="form-row">
           <div class="field">
@@ -431,7 +515,7 @@
         </div>
         <fieldset class="check-group" aria-describedby="in-interest-error">
           <legend>I’m interested in <span class="req">(choose at least one)</span></legend>
-          <div class="check"><input id="in-scam" type="checkbox" name="INTEREST" value="scam-proof-seniors"><label for="in-scam">Scam-Proof Seniors</label></div>
+          <div class="check"><input id="in-scam" type="checkbox" name="INTEREST" value="scam-savvy-seniors"><label for="in-scam">Scam-Savvy Seniors</label></div>
           <div class="check"><input id="in-tech" type="checkbox" name="INTEREST" value="tech-without-tears"><label for="in-tech">Tech Without Tears</label></div>
           <div class="check"><input id="in-home" type="checkbox" name="INTEREST" value="aging-smarter-at-home"><label for="in-home">Aging Smarter at Home</label></div>
           <div class="check"><input id="in-vol" type="checkbox" name="INTEREST" value="volunteer"><label for="in-vol">Volunteering</label></div>
@@ -468,11 +552,10 @@
         <p>When an event is confirmed, it will appear here with the date, time, place and how to attend.</p>
       </article>
       <article class="event-card reveal">
-        <p class="event-status status-target">Selected target · not confirmed</p>
-        <h3>Caregiver expo</h3>
+        <p class="event-status status-target">Planning · not confirmed</p>
+        <h3>Nashville expo</h3>
         <p class="event-date">Saturday, December 12, 2026 · Nashville, Tennessee</p>
-        <p>We hope to have a table with our callback practice and printed guide. We have <strong>not</strong> registered yet.</p>
-        <p class="small"><mark class="confirm">[CONFIRM BEFORE PUBLISHING: name the organizer and venue? Update once registration is confirmed or dropped.]</mark></p>
+        <p>We’re planning toward a Nashville expo on December 12, 2026. Participation and event details are awaiting confirmation.</p>
       </article>
       <article class="event-card reveal">
         <p class="event-status status-idea">Ideas we’re exploring</p>
@@ -484,7 +567,7 @@
         <p>These are ideas only. Nothing is scheduled.</p>
       </article>
     </div>
-    <p class="reveal"><a href="#newsletter">Get event news in The AgeWell Update</a></p>
+    <p class="reveal"><a href="#signup">Get event news in The AgeWell Update</a></p>
   </div>
 </section>
 
@@ -496,11 +579,11 @@
       <h2 id="faq-title">Frequently asked questions</h2>
     </div>
     <div class="faq reveal">
-      <details><summary>Is AgeWell Innovations a nonprofit?</summary><div><p>We’re working toward IRS recognition as a 501(c)(3) organization, but we don’t have it yet. We’ll update this answer when that changes.</p></div></details>
-      <details><summary>Are your workshops running now?</summary><div><p>Not yet. Our three programs are in planning. <a href="#interest">Join the interest list</a> and we’ll tell you when one opens.</p></div></details>
-      <details><summary>Where are workshops held?</summary><div><p>Locations and formats aren’t set yet. <mark class="confirm">[CONFIRM: in person, online, or both]</mark></p></div></details>
-      <details><summary>Do your workshops cost money?</summary><div><p>Costs haven’t been decided. <mark class="confirm">[CONFIRM]</mark></p></div></details>
-      <details><summary>Is Mae a real robot I can get?</summary><div><p>No. Mae is a made-up character in our comic. She’s not a device or service.</p></div></details>
+      <details><summary>Is AgeWell Innovations a nonprofit?</summary><div><p>We’re working toward IRS recognition as a 501(c)(3) organization, but we don’t have it yet. We’ll update this answer when that changes. <mark class="confirm">[CONFIRM LEGAL-STATUS WORDING]</mark></p></div></details>
+      <details><summary>Are your workshops running now?</summary><div><p>Not yet. Our three programs are in planning, and registration isn’t open. <a href="#interest">Join the interest list</a> and we’ll tell you when one opens.</p></div></details>
+      <details><summary>Where are workshops held?</summary><div><p>Workshop format is to be decided (TBD), and locations aren’t set yet.</p></div></details>
+      <details><summary>Do your workshops cost money?</summary><div><p>Workshop cost is to be decided (TBD). There’s nothing to pay or register for right now.</p></div></details>
+      <details><summary>Is Mae a real robot I can get?</summary><div><p>No. Mae is a made-up character in our comic. She’s not a device you can buy. The “Ask Mae” helper on this website is a demonstration with prewritten answers, not live AI.</p></div></details>
       <details><summary>What is voice cloning?</summary><div><p>Voice cloning is when a computer program copies how a person sounds. Scammers can use a short recording to make a call that sounds like someone you love. That’s why we teach the callback.</p></div></details>
       <details><summary>Does a family code phrase keep me safe?</summary><div><p>It can help as an extra check. But it doesn’t replace calling back on a number you already know.</p></div></details>
       <details><summary>I think I was scammed. What should I do?</summary><div><p>First, it’s not your fault. If you paid, call your bank or the payment company right away. Then report it at <a href="https://www.ic3.gov/" rel="noopener">ic3.gov</a> and <a href="https://reportfraud.ftc.gov/" rel="noopener">ReportFraud.ftc.gov</a>. If you’re 60 or older, the National Elder Fraud Hotline can help: <a href="tel:+18333728311">1-833-FRAUD-11 (1-833-372-8311)</a>. <a href="guide.html#if-you-think-youve-been-targeted">Our guide has more steps</a>.</p></div></details>
@@ -520,19 +603,78 @@
       <h2 id="contact-title">Contact us</h2>
       <p>Questions, ideas or interest in a workshop? We’d like to hear from you.</p>
       <dl class="facts compact">
-        <div><dt>Email</dt><dd><mark class="confirm">[CONFIRM INBOX]</mark></dd></div>
-        <div><dt>Accessibility help</dt><dd>If anything on this site is hard to use, tell us at <mark class="confirm">[CONFIRM INBOX]</mark> and we’ll help you get the information another way. <a href="accessibility.html">Accessibility statement</a>.</dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:hello@awinnovations.org">hello@awinnovations.org</a><br><span class="small">Email is not emergency support. If someone is in danger, call 911.</span></dd></div>
+        <div><dt>Accessibility help</dt><dd>If anything on this site is hard to use, tell us at <a href="mailto:hello@awinnovations.org">hello@awinnovations.org</a> and we’ll help you get the information another way. <a href="accessibility.html">Accessibility statement</a>.</dd></div>
       </dl>
     </div>
     <div class="callout safety reveal">
       <h3>A safety promise</h3>
-      <p>We will never ask for passwords, codes or money by email, text or social media. If you think you’re being scammed right now, hang up and call someone you trust on a number you already know.</p>
+      <p>We will never ask for your passwords, verification codes, or payments to recover scam losses.</p>
+      <p>If you think you’re being scammed right now, hang up and call someone you trust on a number you already know.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT / DONATE (button driven by donateUrl in assets/js/config.js) -->
+<section class="section section-tint" id="support" aria-labelledby="support-title" data-donate-show hidden>
+  <div class="wrap narrow">
+    <div class="support-card reveal">
+      <p class="kicker">Support our work</p>
+      <h2 id="support-title">Support AgeWell</h2>
+      <p class="lede-sm">Help us develop practical technology lessons, accessible guides, and community learning opportunities for older adults and caregivers.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" data-donate hidden rel="noopener">Donate to AgeWell</a>
+        <p class="donate-soon" data-donate-soon><span class="status"><span class="status-dot" aria-hidden="true"></span>Coming soon</span> <strong>Donate to AgeWell:</strong> online giving isn’t open yet.</p>
+      </div>
+      <p class="small" data-donate-soon><mark class="confirm">[CONFIRM CHECKOUT: choose a hosted checkout provider, then paste its link as donateUrl in assets/js/config.js]</mark></p>
+      <ul class="ticks small">
+        <li>Gifts will be made on a secure page run by our payment provider. This website never asks for card details.</li>
+        <li>Giving won’t sign you up for The AgeWell Update. That’s a separate choice.</li>
+        <li>A gift is one-time unless you choose monthly giving yourself. Monthly giving will always be clearly labeled.</li>
+      </ul>
     </div>
   </div>
 </section>
 
 </main>
 
+<!-- GEN:MAE:START -->
+<dialog class="mae-dialog" id="ask-mae" aria-labelledby="ask-mae-title" aria-describedby="ask-mae-demo">
+  <div class="mae-shell">
+    <div class="mae-head">
+      <svg class="mae-head-face" aria-hidden="true" focusable="false"><use href="#mae-face"/></svg>
+      <div class="mae-head-text">
+        <h2 id="ask-mae-title" tabindex="-1">Ask Mae</h2>
+        <p class="mae-demo" id="ask-mae-demo"><strong>Demo:</strong> Mae’s answers here are prewritten, not live AI.</p>
+      </div>
+      <button type="button" class="mae-close" data-mae-close><span aria-hidden="true">✕</span> Close</button>
+    </div>
+    <div class="mae-scroll">
+      <div class="mae-log" data-mae-log role="log" aria-live="polite" aria-label="Conversation with Mae"></div>
+      <div class="mae-starters" data-mae-starters role="group" aria-label="Pick a topic">
+        <button type="button" class="mae-chip" data-topic="scam">Something feels like a scam</button>
+        <button type="button" class="mae-chip" data-topic="device">Help with my phone or computer</button>
+        <button type="button" class="mae-chip" data-topic="ai">Explain AI to me</button>
+        <button type="button" class="mae-chip" data-topic="agewell">Ask about AgeWell</button>
+      </div>
+    </div>
+    <form class="mae-form" data-mae-form autocomplete="off">
+      <label for="mae-input">Or type a short question</label>
+      <div class="mae-input-row">
+        <input id="mae-input" data-mae-input type="text" autocomplete="off" maxlength="300" aria-describedby="mae-input-hint">
+        <button type="submit" class="btn btn-primary">Ask</button>
+      </div>
+      <p class="mae-hint" id="mae-input-hint">Please don’t share passwords, verification codes or private account details. Nothing you type is saved or sent anywhere.</p>
+    </form>
+    <div class="mae-foot">
+      <p><a href="mailto:hello@awinnovations.org?subject=Question%20for%20AgeWell">Ask a person: hello@awinnovations.org</a><br>Email is not emergency support. If someone is in danger, call 911.</p>
+      <button type="button" class="mae-reset" data-mae-reset>Start over</button>
+    </div>
+  </div>
+</dialog>
+<!-- GEN:MAE:END -->
+
+<!-- GEN:FOOTER:START -->
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div class="footer-brand">
@@ -544,10 +686,13 @@
       <ul class="footer-links">
         <li><a href="#programs">Programs</a></li>
         <li><a href="#learn">Learn</a></li>
+        <li><a href="notes.html">AI &amp; Safety Notes</a></li>
+        <li><a href="#ask-mae-section">Ask Mae (demo)</a></li>
         <li><a href="#mable-and-mae">Mable &amp; Mae</a></li>
         <li><a href="#newsletter">Newsletter</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#about">About</a></li>
+        <li data-donate-show hidden><a href="#support">Donate</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="privacy.html">Privacy notice</a></li>
         <li><a href="accessibility.html">Accessibility</a></li>
@@ -561,15 +706,19 @@
         <li><a href="https://www.instagram.com/aw_innovations_/" rel="noopener">Instagram: @aw_innovations_</a></li>
         <li><a href="https://www.youtube.com/@AW_Innovations" rel="noopener">YouTube: @AW_Innovations</a></li>
       </ul>
+      <p class="footer-head footer-head-gap">Contact</p>
+      <p><a href="mailto:hello@awinnovations.org">hello@awinnovations.org</a></p>
     </div>
   </div>
   <div class="wrap footer-legal">
-    <p>United States · <mark class="confirm confirm-dark">[CONFIRM LEGAL LINE: Alabama-registered organization; mailing address PO box TBD]</mark></p>
-    <p>AgeWell Innovations is not yet recognized by the IRS as a 501(c)(3) organization. Our content is general education, not legal or financial advice.</p>
-    <p>Mable &amp; Mae artwork created with AI assistance and reviewed by AgeWell Innovations.</p>
-    <p>© 2026 AgeWell Innovations <mark class="confirm confirm-dark">[CONFIRM EXACT LEGAL NAME]</mark></p>
+    <!-- INTERNAL TODO (not shown on site): confirmed mailing address. Do not publish a placeholder or a home address. Required before the Brevo welcome email can be finalized. See site-evidence/brevo-setup-checklist.md. -->
+    <p>United States · <mark class="confirm confirm-dark">[CONFIRM LEGAL LINE: exact registered legal name and legal-status wording]</mark></p>
+    <p>AgeWell Innovations is not yet recognized by the IRS as a 501(c)(3) organization. <mark class="confirm confirm-dark">[CONFIRM LEGAL-STATUS WORDING]</mark> Our content is general education, not legal or financial advice.</p>
+    <p>Artwork created with AI assistance and reviewed by AgeWell Innovations.</p>
+    <p>© 2026 AgeWell Innovations.</p>
     <p><a href="#top">Back to top</a></p>
   </div>
 </footer>
+<!-- GEN:FOOTER:END -->
 </body>
 </html>

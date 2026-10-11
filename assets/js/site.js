@@ -137,11 +137,10 @@
     badEmail: "That email address doesn’t look complete. Please check it and try again. Example: name@example.com",
     consent: "Please check the box to say you’d like the Update.",
     interest: "Please choose at least one thing you’re interested in.",
-    okNewsletter: "Almost done! Check your email and click the link to confirm. If you don’t see it in a few minutes, check your spam or junk folder.",
+    okNewsletter: "Check your inbox to confirm your subscription.",
     okInterest: "Thank you! You’re on the interest list. We’ll be in touch about what you checked.",
-    already: "You’re already on the list. Thank you! Look for the next issue in your inbox.",
-    server: "Something went wrong on our end. Please try again in a few minutes.",
-    preview: "Signup isn’t open yet. This is a preview of the website, so nothing was sent or saved. The form will connect to our email service before launch."
+    server: "Sorry, we couldn’t sign you up just now, and nothing was saved. Please check your internet connection and try again in a few minutes. If it keeps happening, email hello@awinnovations.org.",
+    preview: "Preview only: signup isn’t open yet. Nothing was sent or saved, and you are not subscribed. The form will connect to our email service before launch."
   };
   function showError(input, errEl, text) {
     if (input) input.setAttribute("aria-invalid", "true");
@@ -159,6 +158,14 @@
   function wireForm(form) {
     var kind = form.getAttribute("data-form");
     var action = kind === "newsletter" ? CFG.newsletterFormAction : CFG.interestFormAction;
+    // Only a Brevo-hosted form endpoint is accepted (also enforced by the CSP form-action/connect-src).
+    if (action && !/^https:\/\/[a-z0-9-]+\.sibforms\.com\/serve\/[A-Za-z0-9_-]+$/.test(action)) action = "";
+    var note = document.querySelector('[data-preview-note="' + kind + '"]');
+    if (note) note.hidden = !!action;
+    // Optional Safety Alerts list: Brevo's multi-list block names the checkbox after the
+    // form (e.g. lists_12[]) and uses the list id as its value. Copy both from the embed code.
+    var alerts = form.querySelector("[data-alerts]"), F = CFG.fieldNames || {};
+    if (alerts && F.safetyAlertsListField) { alerts.name = F.safetyAlertsListField; alerts.value = F.safetyAlertsListValue || "1"; }
     var email = form.querySelector('input[type="email"]');
     var emailErr = document.getElementById(email.getAttribute("aria-describedby"));
     var consent = form.querySelector('input[name="OPT_IN"]');
@@ -191,29 +198,33 @@
       btn.disabled = true;
       var data = new FormData(form);
       data.set("locale", "en");
-      fetch(action, { method: "POST", body: data, credentials: "omit" })
+      // Same call Brevo's own embed script makes: POST to the form action with ?isAjax=1, JSON reply {success}.
+      fetch(action + "?isAjax=1", { method: "POST", body: data, credentials: "omit" })
         .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); })
         .then(function (j) {
-          if (j && j.success) {
+          // Success copy appears ONLY when Brevo itself reports success.
+          if (j && j.success === true) {
             setStatus(form, "is-ok", kind === "newsletter" ? MSG.okNewsletter : MSG.okInterest);
             form.reset();
-          } else if (j && /already|exist/i.test(JSON.stringify(j))) {
-            setStatus(form, "is-ok", MSG.already);
           } else {
             setStatus(form, "is-err", MSG.server);
           }
         })
-        .catch(function () {
-          // Cross-origin reply blocked or network error: fall back to a plain
-          // form post to the same Brevo endpoint (Brevo then shows its own page).
-          try {
-            form.setAttribute("action", action);
-            form.setAttribute("method", "post");
-            HTMLFormElement.prototype.submit.call(form);
-          } catch (err) { setStatus(form, "is-err", MSG.server); }
-        })
+        .catch(function () { setStatus(form, "is-err", MSG.server); })
         .then(function () { btn.disabled = false; });
     });
   }
   document.querySelectorAll("form[data-form]").forEach(wireForm);
+
+  /* Donate button: driven by donateUrl in config.js. Empty = no link, "coming soon" shown. */
+  var donateUrl = (CFG.donateUrl || "").trim();
+  var donateOK = /^https:\/\/[^\s"'<>]+$/.test(donateUrl);
+  document.querySelectorAll("[data-donate]").forEach(function (a) {
+    if (donateOK) { a.href = donateUrl; a.hidden = false; } else { a.removeAttribute("href"); a.hidden = true; }
+  });
+  document.querySelectorAll("[data-donate-soon]").forEach(function (n) { n.hidden = donateOK; });
+  // While donateUrl is empty, Donate is hidden everywhere (nav, footer, section),
+  // unless the review-only flag is on.
+  var showDonate = donateOK || CFG.reviewShowDonate === true;
+  document.querySelectorAll("[data-donate-show]").forEach(function (n) { n.hidden = !showDonate; });
 })();
