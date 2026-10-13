@@ -438,3 +438,11 @@ html.mae-open{overflow:hidden}
 .mae-foot p{margin:0}
 @media (max-width:560px){.mae-input-row{flex-direction:column}.mae-foot{flex-direction:column;align-items:flex-start}.mae-head{flex-wrap:wrap}}
 @media print{.mae-dialog,[data-ask-mae]{display:none !important}}
+
+/* /join page */
+.join-wrap { padding-block: 2rem 4rem; }
+.join-card { max-width: 36rem; margin-inline: auto; text-align: left; }
+.join-mae img { display: block; width: 160px; height: 160px; border-radius: 50%; margin: 0 auto 1.25rem; border: 4px solid #D97732; object-fit: cover; }
+.join-lede { font-size: 1.25rem; line-height: 1.6; }
+.join-btn { width: 100%; min-height: 3.5rem; font-size: 1.25rem; }
+.join-card input[type="email"], .join-card input[type="text"] { min-height: 3.25rem; font-size: 1.2rem; }
