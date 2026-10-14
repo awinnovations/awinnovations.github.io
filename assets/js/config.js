@@ -21,7 +21,7 @@
  *   Card details are never collected on this website.
  */
 window.AGEWELL_CONFIG = {
-  newsletterFormAction: "",
+  newsletterFormAction: "https://fe836f5c.sibforms.com/serve/MUIFAOsspgvUgEGNDbwaEI-Wi6EeEeZbZWKJU1-QqLkyNvQOx4uE_XfZS0q61ienjBP9GqSX7PzbaX-K_pKhLU5x-Zhw3b0PhZmxdaOr6xN0BZZ7Ojfv7QZ3_wQjD_cGwucNUtRD_XY8cDqflh2U55C8T2afk8BzY8N-GaV9-TushkBXWjD2jSuUEiCcKCDsWoH38Q53tfrh2fnbhQ==",
   interestFormAction: "",
   donateUrl: "",
   // REVIEW ONLY. true shows the hidden "Support AgeWell" section and nav

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AgeWell Innovations | Technology with care.</title>
 <meta name="description" content="AgeWell Innovations helps older adults and caregivers understand technology, recognize scams and build confidence through practical education.">
-<!-- PREVIEW: remove the next line at launch, once every [CONFIRM] item is resolved. -->
+<!-- Search indexing is still off on purpose (noindex + robots.txt). -->
 <meta name="robots" content="noindex, nofollow">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self' https://*.sibforms.com; form-action 'self' https://*.sibforms.com; base-uri 'self'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -40,10 +40,6 @@
 </svg>
 
 <a class="skip-link" href="#main">Skip to main content</a>
-
-<aside class="preview-bar" aria-label="Preview notice">
-  <p><strong>Preview for review.</strong> Not public yet. Items marked <mark class="confirm">[CONFIRM]</mark> need a decision before launch.</p>
-</aside>
 
 <header class="site-header" id="top">
   <div class="wrap header-inner">
@@ -419,7 +415,6 @@
     <div class="form-card reveal" id="signup">
       <h3>Get the AgeWell Update</h3>
       <p>Practical technology lessons, safety tips, and Mable &amp; Mae—delivered monthly. Free to join.</p>
-      <p class="preview-note" data-preview-note="newsletter"><strong>Preview:</strong> signup isn’t open yet. This form doesn’t send or save anything.</p>
       <form class="signup-form" data-form="newsletter" novalidate>
         <div class="field">
           <label for="nl-email">Email address <span class="req">(required)</span></label>
@@ -435,13 +430,9 @@
           <label for="nl-consent">Yes, send me The AgeWell Update by email. I can unsubscribe any time.</label>
         </div>
         <p class="field-error" id="nl-consent-error" hidden></p>
-        <div class="check">
-          <input id="nl-alerts" name="SAFETY_ALERTS" type="checkbox" value="1" data-alerts>
-          <label for="nl-alerts">Occasional safety alerts <span class="opt">(optional, separate from the monthly Update)</span></label>
-        </div>
         <div class="hp" aria-hidden="true"><label for="nl-hp">Leave this empty</label><input id="nl-hp" name="email_address_check" type="text" tabindex="-1" autocomplete="off"></div>
         <button class="btn btn-primary" type="submit">Join the AgeWell Update</button>
-        <p class="helper">When signup opens, we’ll email you a link to confirm. You won’t be subscribed until you click it. We ask only for your email and, if you choose, your first name. <a href="privacy.html">Read our privacy notice</a>.</p>
+        <p class="helper">We’ll email you a link to confirm. You won’t be subscribed until you click it. We ask only for your email and, if you choose, your first name. <a href="privacy.html">Read our privacy notice</a>.</p>
         <div class="form-status" role="status" aria-live="polite" data-status></div>
       </form>
       <p class="small">The Update comes by email only. We don’t mail printed copies right now.</p>
@@ -470,7 +461,6 @@
         <div><dt>Location</dt><dd>United States. Our first events are being planned in Nashville, Tennessee.</dd></div>
         <div id="founder"><dt>Founder</dt><dd>Dominique London is the founder of AgeWell Innovations, an initiative helping older adults and caregivers understand technology, recognize scams, and build confidence. AgeWell combines practical education with approachable storytelling through Mable &amp; Mae.</dd></div>
         <div><dt>Where we are now</dt><dd>We’re just getting started. Our programs are in planning. Our first guide is ready to read. Our newsletter and comic are previews, with first issues upcoming. We’ll post real updates here as they happen.</dd></div>
-        <div><dt>Our status</dt><dd>AgeWell Innovations is not yet recognized by the IRS as a 501(c)(3) organization. <mark class="confirm">[CONFIRM LEGAL-STATUS WORDING]</mark></dd></div>
       </dl>
     </div>
 
@@ -579,7 +569,6 @@
       <h2 id="faq-title">Frequently asked questions</h2>
     </div>
     <div class="faq reveal">
-      <details><summary>Is AgeWell Innovations a nonprofit?</summary><div><p>We’re working toward IRS recognition as a 501(c)(3) organization, but we don’t have it yet. We’ll update this answer when that changes. <mark class="confirm">[CONFIRM LEGAL-STATUS WORDING]</mark></p></div></details>
       <details><summary>Are your workshops running now?</summary><div><p>Not yet. Our three programs are in planning, and registration isn’t open. <a href="#interest">Join the interest list</a> and we’ll tell you when one opens.</p></div></details>
       <details><summary>Where are workshops held?</summary><div><p>Workshop format is to be decided (TBD), and locations aren’t set yet.</p></div></details>
       <details><summary>Do your workshops cost money?</summary><div><p>Workshop cost is to be decided (TBD). There’s nothing to pay or register for right now.</p></div></details>
@@ -590,7 +579,6 @@
       <details><summary>Can you help me with my scam case or account?</summary><div><p>We teach and share information. We can’t investigate scams, recover money or log in to your accounts. Please contact your bank and the agencies listed in our guide.</p></div></details>
       <details><summary>Will you send me a printed newsletter?</summary><div><p>Not right now. The AgeWell Update is email only for now.</p></div></details>
       <details><summary>How do I unsubscribe?</summary><div><p>Click “unsubscribe” at the bottom of any email from us. That’s it.</p></div></details>
-      <details><summary>Can I share your guide?</summary><div><p><mark class="confirm">[CONFIRM SHARING PERMISSION, for example: “Yes, you may print and share it for non-commercial education.”]</mark></p></div></details>
     </div>
   </div>
 </section>
@@ -626,7 +614,6 @@
         <a class="btn btn-primary" data-donate hidden rel="noopener">Donate to AgeWell</a>
         <p class="donate-soon" data-donate-soon><span class="status"><span class="status-dot" aria-hidden="true"></span>Coming soon</span> <strong>Donate to AgeWell:</strong> online giving isn’t open yet.</p>
       </div>
-      <p class="small" data-donate-soon><mark class="confirm">[CONFIRM CHECKOUT: choose a hosted checkout provider, then paste its link as donateUrl in assets/js/config.js]</mark></p>
       <ul class="ticks small">
         <li>Gifts will be made on a secure page run by our payment provider. This website never asks for card details.</li>
         <li>Giving won’t sign you up for The AgeWell Update. That’s a separate choice.</li>
@@ -712,8 +699,7 @@
   </div>
   <div class="wrap footer-legal">
     <!-- INTERNAL TODO (not shown on site): confirmed mailing address. Do not publish a placeholder or a home address. Required before the Brevo welcome email can be finalized. See site-evidence/brevo-setup-checklist.md. -->
-    <p>United States · <mark class="confirm confirm-dark">[CONFIRM LEGAL LINE: exact registered legal name and legal-status wording]</mark></p>
-    <p>AgeWell Innovations is not yet recognized by the IRS as a 501(c)(3) organization. <mark class="confirm confirm-dark">[CONFIRM LEGAL-STATUS WORDING]</mark> Our content is general education, not legal or financial advice.</p>
+    <p>Our content is general education, not legal or financial advice.</p>
     <p>Artwork created with AI assistance and reviewed by AgeWell Innovations.</p>
     <p>© 2026 AgeWell Innovations.</p>
     <p><a href="#top">Back to top</a></p>

@@ -159,7 +159,7 @@
     var kind = form.getAttribute("data-form");
     var action = kind === "newsletter" ? CFG.newsletterFormAction : CFG.interestFormAction;
     // Only a Brevo-hosted form endpoint is accepted (also enforced by the CSP form-action/connect-src).
-    if (action && !/^https:\/\/[a-z0-9-]+\.sibforms\.com\/serve\/[A-Za-z0-9_-]+$/.test(action)) action = "";
+    if (action && !/^https:\/\/[a-z0-9-]+\.sibforms\.com\/serve\/[A-Za-z0-9_=-]+$/.test(action)) action = "";
     var note = document.querySelector('[data-preview-note="' + kind + '"]');
     if (note) note.hidden = !!action;
     // Optional Safety Alerts list: Brevo's multi-list block names the checkbox after the
@@ -198,6 +198,8 @@
       btn.disabled = true;
       var data = new FormData(form);
       data.set("locale", "en");
+      // Send only the fields the Brevo form has (same as /join): EMAIL, FIRSTNAME, email_address_check, locale.
+      if (kind === "newsletter") { data.delete("OPT_IN"); data.delete("SAFETY_ALERTS"); }
       // Same call Brevo's own embed script makes: POST to the form action with ?isAjax=1, JSON reply {success}.
       fetch(action + "?isAjax=1", { method: "POST", body: data, credentials: "omit" })
         .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); })
