@@ -89,7 +89,7 @@ home_main = f'''<main id="main" tabindex="-1">
 
 <section class="section hub" aria-labelledby="hub-title">
   <div class="wrap">
-    <h2 id="hub-title">Where would you like to go?</h2>
+    <h2 id="hub-title">Explore AgeWell</h2>
     <ul class="hub-grid">
 {cards}
     </ul>
