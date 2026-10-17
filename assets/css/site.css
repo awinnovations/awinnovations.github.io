@@ -572,3 +572,9 @@ main,.site-footer{position:relative;z-index:1}
 /* v2: fade the short hero's tinted background into the page so its bottom edge doesn't show
    as a pink band under the sticky header when you scroll to the story */
 .hero-short{background:linear-gradient(to bottom,rgba(247,244,237,0) 55%,var(--ivory) 100%),radial-gradient(1200px 500px at 85% 10%,rgba(96,127,156,.14),transparent 60%),radial-gradient(800px 400px at 0% 100%,rgba(217,119,50,.09),transparent 60%)}
+/* v3: track follows the active card. JS sets --h to the active card's height; every card is capped
+   at --h (overflow hidden, borders intact), so the controls sit right under the active card. */
+.carousel.is-fit .slide{max-height:var(--h,none);overflow:hidden}
+.motion-ok .carousel.is-fit .slide{transition:max-height 250ms var(--ease)}
+.carousel-controls{margin-top:.5rem}
+.carousel.is-fit .slide>*{flex-shrink:0}

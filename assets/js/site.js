@@ -130,8 +130,22 @@
       dots.forEach(function (d, k) { d.setAttribute("aria-current", k === i ? "true" : "false"); });
       prev.disabled = i === 0;
       next.disabled = i >= slides.length - 1 || track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+      fit();
       if (announce && status) status.textContent = "Step " + (i + 1) + " of " + slides.length + ": " + (slides[i].querySelector("h3") || {}).textContent;
     }
+    function fit() {
+      // Only on phones, where one card is in view; wider screens show several cards at full height.
+      var one = !window.matchMedia || window.matchMedia("(max-width: 759px)").matches;
+      car.classList.toggle("is-fit", one);
+      var a = slides[cur]; if (!a || !one) return;
+      var last = a.lastElementChild, cs = getComputedStyle(a);
+      var h = last ? last.getBoundingClientRect().bottom - a.getBoundingClientRect().top + parseFloat(getComputedStyle(last).marginBottom) + parseFloat(cs.paddingBottom) + parseFloat(cs.borderBottomWidth) : a.scrollHeight;
+      h = Math.ceil(h);
+      car.style.setProperty("--h", h + "px");
+    }
+    window.addEventListener("resize", fit);
+    window.addEventListener("load", fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
     prev.addEventListener("click", function () { go(cur - 1); });
     next.addEventListener("click", function () { go(cur + 1); });
     track.addEventListener("keydown", function (e) {
