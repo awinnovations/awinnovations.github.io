@@ -93,14 +93,54 @@
 
 <section class="hero hero-short" aria-labelledby="hero-title">
   <div class="wrap hero-short-grid">
-    <picture class="hero-mae">
+    <picture class="hero-mae" data-parallax>
       <source srcset="/assets/img/mae-head.webp" type="image/webp">
       <img src="/assets/img/mae-head.jpg" width="480" height="480" alt="Mae, AgeWell's friendly robot helper">
     </picture>
     <div>
+      <p class="kicker">Founded in Birmingham, AL</p>
       <h1 id="hero-title">Technology with care.</h1>
       <p class="lede">AgeWell Innovations helps older adults and caregivers understand technology, recognize scams and build confidence through practical education.</p>
       <p><a class="btn btn-primary" href="/join/">Join the newsletter</a></p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section story" aria-labelledby="story-title">
+  <div class="wrap">
+    <p class="kicker">Our story in five steps</p>
+    <h2 id="story-title">Why AgeWell exists</h2>
+    <div class="carousel" data-carousel aria-roledescription="carousel" aria-label="Why AgeWell exists">
+      <ol class="carousel-track" tabindex="0" aria-label="Story steps. Swipe or use the buttons to move.">
+        <li class="slide" aria-roledescription="slide" aria-label="1 of 5">
+          <p class="slide-num">1</p><h3>Technology moves fast.</h3>
+          <p>Phones, apps and AI tools change every few months. It's normal to feel a step behind. Scammers count on that feeling.</p>
+        </li>
+        <li class="slide" aria-roledescription="slide" aria-label="2 of 5">
+          <p class="slide-num">2</p><h3>Scams sound more real now.</h3>
+          <p>A call can sound like someone you love. A message can look like your bank. Slowing down and checking is the safest habit.</p>
+        </li>
+        <li class="slide slide-art" aria-roledescription="slide" aria-label="3 of 5">
+          <picture><source srcset="/assets/img/mable-and-mae.webp" type="image/webp"><img src="/assets/img/mable-and-mae.jpg" alt="Mable and her robot helper Mae" loading="lazy"></picture>
+          <p class="slide-num">3</p><h3>Meet Mable &amp; Mae.</h3>
+          <p>Mable asks the questions many of us have. Mae, her robot helper, answers in plain language.</p>
+        </li>
+        <li class="slide" aria-roledescription="slide" aria-label="4 of 5">
+          <p class="slide-num">4</p><h3>How AgeWell helps.</h3>
+          <p>Plain-language lessons, short safety notes, a free guide and planned workshops for older adults and the people who care for them.</p>
+        </li>
+        <li class="slide slide-cta" aria-roledescription="slide" aria-label="5 of 5">
+          <p class="slide-num">5</p><h3>Your next step.</h3>
+          <p class="btn-stack"><a class="btn btn-primary" href="/learn/">Practice spotting a scam</a><a class="btn btn-secondary" href="/guide.html">Get the free guide</a><a class="btn btn-secondary" href="/contact/">Ask a person</a></p>
+        </li>
+      </ol>
+      <div class="carousel-controls" hidden>
+        <button class="carousel-btn" type="button" data-prev aria-label="Previous step"><span aria-hidden="true">←</span></button>
+        <div class="carousel-dots" role="group" aria-label="Choose a step"></div>
+        <button class="carousel-btn" type="button" data-next aria-label="Next step"><span aria-hidden="true">→</span></button>
+      </div>
+      <p class="sr-only" aria-live="polite" data-carousel-status></p>
     </div>
   </div>
 </section>

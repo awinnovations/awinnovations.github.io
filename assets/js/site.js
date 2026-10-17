@@ -1,4 +1,7 @@
-/* AgeWell Innovations site behavior. No trackers, no cookies, no storage. */
+/* AgeWell Innovations site behavior. This file itself sets no cookies and uses no storage.
+   Note: every page also loads Google Analytics 4 (G-ME7ZJEWXJD) in <head>, which sets
+   first-party analytics cookies (Google signals and ad personalization are off).
+   Never send names, emails or form contents to Analytics. */
 (function () {
   "use strict";
   var root = document.documentElement;
@@ -37,6 +40,25 @@
     });
   }
 
+  /* ---------- Active page indicator ---------- */
+  if (nav) {
+    var here = location.pathname.replace(/index\.html$/, "");
+    nav.querySelectorAll("a").forEach(function (a) {
+      var p = a.getAttribute("href").replace(/index\.html$/, "");
+      if (p === here && !a.classList.contains("btn")) a.setAttribute("aria-current", "page");
+    });
+  }
+
+  /* ---------- Auto-tag sections and cards for gentle entrances (JS-only, so no-JS stays visible) ---------- */
+  if (motionOK()) {
+    document.querySelectorAll("main > section:not(:first-child) > .wrap > :not(.hub-grid):not(.card-grid):not(.carousel), .hub-grid > li, .card").forEach(function (el, i) {
+      if (el.closest(".reveal") && !el.classList.contains("reveal")) return;
+      el.classList.add("reveal");
+      var sib = el.parentNode ? Array.prototype.indexOf.call(el.parentNode.children, el) : 0;
+      if (sib > 0) { el.setAttribute("data-stagger", ""); el.style.setProperty("--i", Math.min(sib, 6)); }
+    });
+  }
+
   /* ---------- Gentle section entrances (content stays visible without JS) ---------- */
   var reveals = document.querySelectorAll(".reveal");
   if (motionOK() && "IntersectionObserver" in window) {
@@ -51,6 +73,82 @@
   } else {
     reveals.forEach(function (el) { el.classList.add("is-in"); });
   }
+
+  /* ---------- Hero parallax (desktop, motion OK) / reading progress / cursor glow ---------- */
+  var desktop = window.matchMedia && window.matchMedia("(min-width: 900px) and (pointer: fine)");
+  var para = document.querySelector("[data-parallax]");
+  var longPage = document.body.scrollHeight > window.innerHeight * 2.5 && /guide|notes|learn|privacy|faq|about|accessibility/.test(location.pathname);
+  var bar = null;
+  if (longPage && motionOK()) {
+    bar = document.createElement("div"); bar.className = "read-progress"; bar.setAttribute("aria-hidden", "true");
+    document.body.appendChild(bar);
+  }
+  var ticking = false;
+  function onScroll() {
+    if (ticking) return; ticking = true;
+    window.requestAnimationFrame(function () {
+      ticking = false;
+      var y = window.scrollY || 0;
+      if (para && motionOK() && desktop && desktop.matches) para.style.setProperty("--py", Math.min(y * 0.12, 60).toFixed(1) + "px");
+      if (bar) { var max = document.documentElement.scrollHeight - window.innerHeight; bar.style.setProperty("--p", max > 0 ? Math.min(y / max, 1).toFixed(3) : 0); }
+    });
+  }
+  if ((para || bar) && motionOK()) window.addEventListener("scroll", onScroll, { passive: true });
+  if (motionOK() && desktop && desktop.matches) {
+    var glow = document.createElement("div"); glow.className = "cursor-glow"; glow.setAttribute("aria-hidden", "true");
+    document.body.appendChild(glow);
+    window.addEventListener("pointermove", function (e) {
+      if (e.pointerType !== "mouse") return;
+      glow.style.setProperty("--cx", e.clientX + "px"); glow.style.setProperty("--cy", e.clientY + "px");
+    }, { passive: true });
+    document.addEventListener("mouseleave", function () { glow.style.setProperty("--cx", "-999px"); });
+  }
+
+  /* ---------- Manual carousels: arrows, dots, swipe (native scroll-snap). Never autoplays. ---------- */
+  document.querySelectorAll("[data-carousel]").forEach(function (car) {
+    var track = car.querySelector(".carousel-track");
+    var slides = Array.prototype.slice.call(track.children);
+    var controls = car.querySelector(".carousel-controls");
+    var dotsBox = car.querySelector(".carousel-dots");
+    var prev = car.querySelector("[data-prev]"), next = car.querySelector("[data-next]");
+    var status = car.querySelector("[data-carousel-status]");
+    controls.hidden = false;
+    var dots = slides.map(function (s, i) {
+      var d = document.createElement("button");
+      d.type = "button"; d.className = "carousel-dot"; d.setAttribute("aria-label", "Step " + (i + 1) + " of " + slides.length);
+      d.addEventListener("click", function () { go(i); });
+      dotsBox.appendChild(d); return d;
+    });
+    var cur = 0;
+    function go(i) {
+      i = Math.max(0, Math.min(slides.length - 1, i));
+      track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior: motionOK() ? "smooth" : "auto" });
+      mark(i, true);
+    }
+    function mark(i, announce) {
+      cur = i;
+      dots.forEach(function (d, k) { d.setAttribute("aria-current", k === i ? "true" : "false"); });
+      prev.disabled = i === 0;
+      next.disabled = i >= slides.length - 1 || track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+      if (announce && status) status.textContent = "Step " + (i + 1) + " of " + slides.length + ": " + (slides[i].querySelector("h3") || {}).textContent;
+    }
+    prev.addEventListener("click", function () { go(cur - 1); });
+    next.addEventListener("click", function () { go(cur + 1); });
+    track.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); go(cur + 1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); go(cur - 1); }
+    });
+    var st = null;
+    track.addEventListener("scroll", function () {
+      window.clearTimeout(st);
+      st = window.setTimeout(function () {
+        var best = 0, bd = Infinity;
+        slides.forEach(function (s, k) { var d = Math.abs(s.offsetLeft - track.offsetLeft - track.scrollLeft); if (d < bd) { bd = d; best = k; } });
+        mark(best, false);
+      }, 120);
+    }, { passive: true });
+    mark(0, false);
+  });
 
   /* ---------- Mae's greeting: short, stops on its own, with a pause control ---------- */
   var greet = document.getElementById("mae-greeting");

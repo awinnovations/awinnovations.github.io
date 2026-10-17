@@ -470,3 +470,67 @@ html.mae-open{overflow:hidden}
 .page-hero-slim { padding-block: 1rem 0; }
 .back-home, .back-bottom a { display: inline-flex; align-items: center; min-height: 48px; font-size: 1.125rem; }
 .back-bottom { padding-block: 0 2.5rem; }
+
+/* ===== Story + motion layer (story-motion-preview). All motion is gated by .motion-ok,
+   which JS adds only when prefers-reduced-motion is not set. Content is visible without JS. ===== */
+/* Active page indicator */
+.site-nav a[aria-current="page"]:not(.btn){background:rgba(217,119,50,.14);box-shadow:inset 0 -3px 0 var(--copper)}
+/* Mobile menu: smooth open/close */
+@media (max-width: 899px){
+  .motion-ok.js .site-nav{display:block;visibility:hidden;opacity:0;transform:translateY(-8px);pointer-events:none;
+    transition:opacity 220ms var(--ease),transform 260ms var(--ease),visibility 0s linear 260ms}
+  .motion-ok.js .site-nav.is-open{visibility:visible;opacity:1;transform:none;pointer-events:auto;transition:opacity 220ms var(--ease),transform 260ms var(--ease)}
+  .motion-ok.js .site-nav.is-open li{animation:lift-in 300ms var(--ease) both}
+  .motion-ok.js .site-nav.is-open li:nth-child(n+2){animation-delay:20ms}
+  .motion-ok.js .site-nav.is-open li:nth-child(n+4){animation-delay:40ms}
+  .motion-ok.js .site-nav.is-open li:nth-child(n+7){animation-delay:60ms}
+}
+@keyframes lift-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* Press + spring buttons */
+.motion-ok .btn,.motion-ok .hub-card,.motion-ok .carousel-btn{transition:transform 320ms cubic-bezier(.34,1.56,.64,1),box-shadow var(--t) var(--ease),background var(--t) var(--ease),color var(--t) var(--ease),border-color var(--t)}
+.motion-ok .btn:hover,.motion-ok .hub-card:hover{transform:translateY(-2px)}
+.motion-ok .btn:active,.motion-ok .hub-card:active,.motion-ok .carousel-btn:active{transform:scale(.96);transition-duration:90ms}
+/* Staggered reveals */
+.motion-ok .reveal[data-stagger]{transition-delay:calc(var(--i,0) * 60ms)}
+/* Hero parallax (desktop only; JS sets --py) */
+.motion-ok [data-parallax]{transform:translate3d(0,var(--py,0px),0);will-change:transform}
+/* Reading progress */
+.read-progress{position:fixed;left:0;top:0;height:4px;width:100%;background:var(--copper);transform-origin:0 50%;transform:scaleX(var(--p,0));z-index:60;pointer-events:none}
+/* Cursor glow (desktop, fine pointer, motion OK) */
+.cursor-glow{position:fixed;left:0;top:0;width:320px;height:320px;margin:-160px 0 0 -160px;border-radius:50%;pointer-events:none;z-index:0;
+  background:radial-gradient(circle,rgba(217,119,50,.13),rgba(217,119,50,0) 65%);transform:translate3d(var(--cx,-999px),var(--cy,-999px),0);transition:opacity 300ms}
+main,.site-footer{position:relative;z-index:1}
+/* Story carousel */
+.story{padding-top:1rem}
+.carousel{position:relative}
+.carousel-track{list-style:none;margin:1rem 0 0;padding:0 0 .5rem;display:grid;grid-auto-flow:column;grid-auto-columns:88%;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+@media (min-width:760px){.carousel-track{grid-auto-columns:calc((100% - 2rem)/3)}}
+.motion-ok .carousel-track{scroll-behavior:smooth}
+.slide{scroll-snap-align:start;background:var(--white);border:2px solid var(--navy);border-radius:var(--radius);padding:1.25rem 1.35rem;display:flex;flex-direction:column}
+.slide h3{font-size:1.45rem;margin:.1rem 0 .4rem}
+.slide p{margin:0 0 .6rem}
+.slide-num{font-family:var(--font-head);font-weight:700;font-size:1rem;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--copper);color:var(--navy);display:grid;place-items:center}
+.slide-art img{width:100%;height:auto;border-radius:12px;margin-bottom:.75rem;aspect-ratio:4/3;object-fit:cover}
+.slide-cta{background:var(--navy);color:var(--ivory)}
+.slide-cta h3{color:var(--ivory)}
+.btn-stack{display:flex;flex-direction:column;gap:.6rem;margin-top:.4rem!important}
+.slide-cta .btn-secondary{border-color:var(--ivory)}
+.slide-cta .btn-primary{background:var(--copper);color:var(--navy);border-color:var(--copper)}
+.carousel-controls{display:flex;align-items:center;justify-content:center;gap:.75rem;margin-top:.75rem}
+.carousel-controls[hidden]{display:none}
+.carousel-btn{min-width:52px;min-height:52px;border-radius:50%;border:2px solid var(--navy);background:var(--white);color:var(--navy);font-size:1.4rem;font-weight:700;cursor:pointer}
+.carousel-btn:hover{background:var(--paper);border-color:var(--copper)}
+.carousel-btn:disabled{opacity:.45;cursor:default}
+.carousel-dots{display:flex;gap:.1rem}
+.carousel-dot{width:44px;height:44px;border:0;background:transparent;cursor:pointer;display:grid;place-items:center;padding:0}
+.carousel-dot::before{content:"";width:12px;height:12px;border-radius:999px;background:var(--line);border:2px solid var(--navy);transition:width 250ms var(--ease),background 250ms}
+.carousel-dot[aria-current="true"]::before{width:26px;background:var(--copper)}
+@media (prefers-reduced-motion: reduce){
+  .read-progress,.cursor-glow{display:none}
+  [data-parallax]{transform:none!important}
+  .carousel-track{scroll-behavior:auto}
+}
+.btn.is-sending{opacity:.85;cursor:progress}
+.btn.is-sent{background:var(--ok);border-color:var(--ok);color:var(--white)}
+.motion-ok .btn.is-sent{animation:pop 360ms cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{0%{transform:scale(.94)}100%{transform:scale(1)}}

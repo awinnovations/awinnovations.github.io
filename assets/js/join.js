@@ -18,14 +18,14 @@
       err.hidden = false; email.setAttribute("aria-invalid", "true"); email.focus(); return;
     }
     if (form.querySelector('input[name="email_address_check"]').value) return;
-    btn.disabled = true; say("is-wait", "Sending…");
+    var label = btn.textContent; btn.disabled = true; btn.classList.add("is-sending"); btn.textContent = "Sending…"; say("is-wait", "Sending…");
     fetch(action + "?isAjax=1", { method: "POST", body: new FormData(form), credentials: "omit" })
       .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); })
       .then(function (j) {
-        if (j && j.success === true) { say("is-ok", "Thanks! Check your email to confirm."); form.reset(); }
+        if (j && j.success === true) { say("is-ok", "Thanks! Check your email to confirm."); form.reset(); btn.classList.add("is-sent"); btn.textContent = "✓ Sent"; window.setTimeout(function () { btn.classList.remove("is-sent"); btn.textContent = label; }, 4000); }
         else say("is-err", "Sorry, that didn't go through. Please try again, or email hello@awinnovations.org.");
       })
       .catch(function () { say("is-err", "Sorry, that didn't go through. Please try again, or email hello@awinnovations.org."); })
-      .then(function () { btn.disabled = false; });
+      .then(function () { btn.disabled = false; btn.classList.remove("is-sending"); if (!btn.classList.contains("is-sent")) btn.textContent = label; });
   });
 })();
