@@ -578,3 +578,8 @@ main,.site-footer{position:relative;z-index:1}
 .motion-ok .carousel.is-fit .slide{transition:max-height 250ms var(--ease)}
 .carousel-controls{margin-top:.5rem}
 .carousel.is-fit .slide>*{flex-shrink:0}
+/* Footer social: platform icon + handle. Icons use currentColor (ivory on the navy footer, navy in print). */
+.social-links li{margin:.25rem 0}
+.social-link{display:inline-flex;align-items:center;gap:.7rem;min-height:48px;padding:.3rem .2rem;text-decoration:none}
+.social-link span{text-decoration:underline;text-underline-offset:.18em}
+.social-icon{width:26px;height:26px;flex:none}
