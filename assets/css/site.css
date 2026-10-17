@@ -550,3 +550,7 @@ main,.site-footer{position:relative;z-index:1}
   .site-nav .nav-cta{margin-left:.2rem}
   .brand-name{font-size:1.45rem}
 }
+/* Balanced layout: shorter art so all five cards share a compact, equal height */
+.carousel-track{align-items:stretch}
+.slide-art img{aspect-ratio:auto;height:140px;object-fit:cover;object-position:50% 30%}
+.slide-art{flex-direction:column}
