@@ -534,3 +534,19 @@ main,.site-footer{position:relative;z-index:1}
 .btn.is-sent{background:var(--ok);border-color:var(--ok);color:var(--white)}
 .motion-ok .btn.is-sent{animation:pop 360ms cubic-bezier(.34,1.56,.64,1)}
 @keyframes pop{0%{transform:scale(.94)}100%{transform:scale(1)}}
+/* Cleanup: cards size to their content; track height stays at the tallest card so arrows don't move */
+.carousel-track{align-items:start}
+.slide-art img{aspect-ratio:16/10}
+/* Cleanup: solid header (no see-through blur patch behind the logo when content scrolls under it) */
+.site-header{background:var(--ivory);backdrop-filter:none;-webkit-backdrop-filter:none}
+/* Cleanup: keep the desktop menu on one line */
+@media (min-width: 900px){
+  .site-nav a{white-space:nowrap}
+  .site-nav ul{flex-wrap:nowrap;gap:0}
+}
+@media (min-width: 900px) and (max-width: 1279px){
+  .header-inner{gap:.5rem}
+  .site-nav a{padding:.5rem .45rem;font-size:.95rem}
+  .site-nav .nav-cta{margin-left:.2rem}
+  .brand-name{font-size:1.45rem}
+}
